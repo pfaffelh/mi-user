@@ -2,6 +2,7 @@ import streamlit as st
 from pymongo import ASCENDING
 from misc.config import *
 from misc.util import *
+import pandas as pd
 
 # make all neccesary variables available to session_state
 setup_session_state()
@@ -17,33 +18,22 @@ if st.session_state.logged_in:
     st.write("Wir listen alle User auf.")
     st.divider()
 
-    col1, col2 = st.columns([1,1]) 
-    # Der Sprach-Umschalter
-    with col1:
-        st.button("en" if st.session_state.lang == "de" else "de", on_click = change_lang)
-    # Der Ausklapp-Umschalter
-    with col2:
-        st.button("Alles einklappen" if st.session_state.expand_all == True else "Alles ausklappen", on_click = change_expand_all)
+    # Zeige alle User als Dataframe an
+    all_users = list(user.find({}))
+#    st.write([u["email"] for u in all_users])
+#    st.write([u["vorname"] for u in all_users])
+    data = {
+            "Vorname": [u["vorname"] for u in all_users],
+            "Nachname": [u["name"] for u in all_users],
+            "rz-Kennung": [u["rz"] for u in all_users],
+            "email": [u["email"] for u in all_users],
+        }
+ #   st.write(data)
+    for g in list(group.find().sort("name")):
+        data[g["name"]] = [(True if (g["name"] in u["groups"]) else False) for u in all_users]
+    df = pd.DataFrame(data).sort_values(by=['Nachname'])
 
-    # Alle Kategorien. (ASCENDING sortiert sie nach ihrer Anzeige-Reihenfolge.)
-    cats = list(category.find(sort=[("rang", pymongo.ASCENDING)]))
-
-    # Nun werden für alle Kategorien all Frage-Antwort-Paare angezeigt
-    for cat in cats:
-        st.divider()
-        st.write(cat["name_de"] if st.session_state.lang == "de" else cat["name_en"])
-        y = qa.find({"category": cat["kurzname"]}, sort=[("rang", pymongo.ASCENDING)])
-        for x in y:
-            with st.expander(x["q_de"] if st.session_state.lang == "de" else x["q_en"], expanded = st.session_state.expand_all):
-                stu1 = "Studiengänge" if st.session_state == "de" else "Study programs"
-                stu2 = "alle" if st.session_state == "de" else "all"
-                stu2 = (stu2 if x['studiengang'] == [] else (', '.join(x['studiengang'])))
-                st.write(f"{stu1}: {stu2}")
-                st.write("Antwort" if st.session_state == "de" else "Answer")
-                st.write(x["a_de"] if st.session_state.lang == "de" else x["a_en"])
-                if x["kommentar"] != "":
-                    st.write("Kommentar:")
-                    st.write(x["kommentar"])
+    st.dataframe(df, hide_index=True)
 
 else:
     placeholder = st.empty()

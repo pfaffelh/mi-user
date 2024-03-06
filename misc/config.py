@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(levelname)s - 
 # group enthält alle möglichen Gruppen für die verschiedenen Apps.
 # user enthält alle Nutzer.
 cluster = pymongo.MongoClient("mongodb://127.0.0.1:27017")
-mongo_db_users = cluster["users"]
+mongo_db_users = cluster["user"]
 user = mongo_db_users["user"]
 group = mongo_db_users["group"]
 

@@ -4,20 +4,17 @@ from pymongo import MongoClient
 cluster = MongoClient("mongodb://127.0.0.1:27017")
 mongo_db = cluster["user"]
 group = mongo_db["group"]
-user = mongo_db["users"]
+user = mongo_db["user"]
 
 groups = [
      { "name": "admin",
-       "kommentar": "darf alles",
-       "rang": 10
+       "kommentar": "darf alles"
       },
       { "name": "faq",
-       "kommentar": "Darf FAQs bearbeiten",
-       "rang": 20
+       "kommentar": "Darf FAQs bearbeiten"
       },
       { "name": "vvz",
-       "kommentar": "Darf vvz bearbeiten",
-       "rang": 20
+       "kommentar": "Darf vvz bearbeiten"
       }]
 
 users = [
