@@ -1,0 +1,38 @@
+from pymongo import MongoClient
+
+# This is the mongodb
+cluster = MongoClient("mongodb://127.0.0.1:27017")
+mongo_db = cluster["user"]
+group = mongo_db["group"]
+user = mongo_db["qa"]
+
+groups = [
+     { "name": "admin",
+       "kommentar": "darf alles",
+       "rang": 10
+      },
+      { "name": "faq",
+       "kommentar": "Darf FAQs bearbeiten",
+       "rang": 20
+      },
+      { "name": "vvz",
+       "kommentar": "Darf vvz bearbeiten",
+       "rang": 20
+      }]
+
+users = [
+    {"name": "Pfaffelhuber",
+     "vorname": "Peter",
+     "rz": "pp131",
+     "email": "p.p@stochastik.uni-freiburg.de",
+     "groups": ["admin", "faq"],
+     "kommentar": ""}]
+
+group.delete_many({})
+user.delete_many({})
+    
+for x in groups:
+    group.insert_one(x)
+for x in users:
+    user.insert_one(x)
+
