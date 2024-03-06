@@ -7,14 +7,14 @@ from misc.util import *
 setup_session_state()
 
 # Seiten-Layout
-st.set_page_config(page_title="QA-Paare", page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="User-Verwaltung der mi-Apps", page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 logo()
 
 # Ab hier wird die Seite angezeigt
-st.header("FAQ")
+st.header("USERS")
 
 if st.session_state.logged_in:
-    st.write("Wir listen alle Frage-Antwort-Paare in allen Kategorien auf.")
+    st.write("Wir listen alle User auf.")
     st.divider()
 
     col1, col2 = st.columns([1,1]) 
