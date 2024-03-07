@@ -20,15 +20,12 @@ if st.session_state.logged_in:
 
     # Zeige alle User als Dataframe an
     all_users = list(user.find({}))
-#    st.write([u["email"] for u in all_users])
-#    st.write([u["vorname"] for u in all_users])
     data = {
             "Vorname": [u["vorname"] for u in all_users],
             "Nachname": [u["name"] for u in all_users],
             "rz-Kennung": [u["rz"] for u in all_users],
             "email": [u["email"] for u in all_users],
         }
- #   st.write(data)
     for g in list(group.find().sort("name")):
         data[g["name"]] = [(True if (g["name"] in u["groups"]) else False) for u in all_users]
     df = pd.DataFrame(data).sort_values(by=['Nachname'])
