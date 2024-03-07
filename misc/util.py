@@ -36,7 +36,7 @@ def setup_session_state():
     if "user" not in st.session_state:
         st.session_state.user = ""
     if "logged_in" not in st.session_state:
-        st.session_state.logged_in = True
+        st.session_state.logged_in = False
 
 def authenticate(username, password):
     ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)

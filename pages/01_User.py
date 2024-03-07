@@ -75,6 +75,6 @@ if st.session_state.logged_in:
         st.rerun()
 
 else:
-  switch_page("FAQ")
+  switch_page("USERS")
 
 st.sidebar.button("logout", on_click = logout)
