@@ -1,0 +1,101 @@
+2024-03-12 22:35:34,573 - INFO - MI-FAQ - Connected to MongoDB
+2024-03-12 22:35:34,573 - INFO - MI-FAQ - Database contains collections: 
+2024-03-12 22:35:34,575 - INFO - MI-FAQ - ['group', 'user']
+2024-03-12 22:37:11,738 - ERROR - MI-FAQ - Verbindung zur Datenbank nicht möglich!
+2024-03-12 22:38:48,573 - ERROR - MI-FAQ - Verbindung zur Datenbank nicht möglich!
+2024-03-12 22:40:00,177 - WARNING - MI-FAQ - LDAP-Error: {'result': -1, 'desc': "Can't contact LDAP server", 'errno': 107, 'ctrls': [], 'info': 'Transport endpoint is not connected'}
+2024-03-12 22:40:02,225 - WARNING - MI-FAQ - LDAP-Error: {'result': -1, 'desc': "Can't contact LDAP server", 'errno': 107, 'ctrls': [], 'info': 'Transport endpoint is not connected'}
+2024-03-12 22:40:02,225 - WARNING - MI-FAQ - LDAP-Error: {'result': -1, 'desc': "Can't contact LDAP server", 'errno': 107, 'ctrls': [], 'info': 'Transport endpoint is not connected'}
+2024-03-12 22:42:34,603 - ERROR - MI-FAQ - Verbindung zur Datenbank nicht möglich!
+2024-03-12 22:42:45,808 - INFO - MI-FAQ - User junker hat sich eingeloggt.
+2024-03-12 22:46:27,897 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 22:49:38,486 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:02:50,171 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:02:50,171 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:03:32,432 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:03:32,432 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:03:35,772 - INFO - MI-FAQ - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:03:35,772 - INFO - MI-USER - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:04:56,913 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:04:56,913 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:05:03,879 - INFO - MI-FAQ - User pp131 hat Gruppe  gelöscht.
+2024-03-12 23:05:03,879 - INFO - MI-USER - User pp131 hat Gruppe  gelöscht.
+2024-03-12 23:05:31,458 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:05:31,458 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:05:34,356 - INFO - MI-FAQ - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:05:34,356 - INFO - MI-USER - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:05:39,167 - INFO - MI-FAQ - User pp131 hat Gruppe  gelöscht.
+2024-03-12 23:05:39,167 - INFO - MI-USER - User pp131 hat Gruppe  gelöscht.
+2024-03-12 23:05:44,264 - INFO - MI-FAQ - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:05:44,264 - INFO - MI-USER - User pp131 hat eine neue Gruppe angelegt.
+2024-03-12 23:05:49,139 - INFO - MI-FAQ - User pp131 hat Gruppe  geändert.
+2024-03-12 23:05:49,139 - INFO - MI-USER - User pp131 hat Gruppe  geändert.
+2024-03-12 23:05:58,643 - INFO - MI-FAQ - User pp131 hat Gruppe calender gelöscht.
+2024-03-12 23:05:58,643 - INFO - MI-USER - User pp131 hat Gruppe calender gelöscht.
+2024-03-12 23:07:00,777 - INFO - MI-FAQ - User pp131 hat Gruppe news geändert.
+2024-03-12 23:07:00,777 - INFO - MI-USER - User pp131 hat Gruppe news geändert.
+2024-03-12 23:07:08,085 - INFO - MI-FAQ - User pp131 hat Gruppe news! geändert.
+2024-03-12 23:07:08,085 - INFO - MI-USER - User pp131 hat Gruppe news! geändert.
+2024-03-12 23:07:14,066 - INFO - MI-FAQ - User pp131 hat Gruppe news!! geändert.
+2024-03-12 23:07:14,066 - INFO - MI-USER - User pp131 hat Gruppe news!! geändert.
+2024-03-12 23:30:41,457 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:30:41,457 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:35:35,260 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:35:35,260 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:35:42,975 - INFO - MI-FAQ - User pp131 hat User df1050 geändert.
+2024-03-12 23:35:42,975 - INFO - MI-USER - User pp131 hat User df1050 geändert.
+2024-03-12 23:35:51,596 - INFO - MI-FAQ - User pp131 hat User df1050 geändert.
+2024-03-12 23:35:51,596 - INFO - MI-USER - User pp131 hat User df1050 geändert.
+2024-03-12 23:36:07,211 - INFO - MI-FAQ - User pp131 hat User df1050 geändert.
+2024-03-12 23:36:07,211 - INFO - MI-USER - User pp131 hat User df1050 geändert.
+2024-03-12 23:36:58,950 - INFO - MI-FAQ - User pp131 hat User df10501 geändert.
+2024-03-12 23:36:58,950 - INFO - MI-USER - User pp131 hat User df10501 geändert.
+2024-03-12 23:37:01,681 - INFO - MI-FAQ - User pp131 hat User df10501 geändert.
+2024-03-12 23:37:01,681 - INFO - MI-USER - User pp131 hat User df10501 geändert.
+2024-03-12 23:37:04,965 - INFO - MI-FAQ - User pp131 hat User df10501 geändert.
+2024-03-12 23:37:04,965 - INFO - MI-USER - User pp131 hat User df10501 geändert.
+2024-03-12 23:47:07,010 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:47:07,010 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:51:22,396 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:51:22,396 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:51:37,484 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:51:37,484 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:51:41,569 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:51:41,569 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:52:50,500 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:52:50,500 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:52:58,326 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:52:58,326 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:53:09,647 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:53:09,647 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:53:16,372 - INFO - MI-FAQ - User pp131 hat User df10501 geändert.
+2024-03-12 23:53:16,372 - INFO - MI-USER - User pp131 hat User df10501 geändert.
+2024-03-12 23:56:54,539 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:56:54,539 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:56:59,858 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:56:59,858 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:57:08,563 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:57:08,563 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:58:18,479 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-12 23:58:18,479 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-12 23:58:24,326 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:58:24,326 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:58:30,115 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-12 23:58:30,115 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-12 23:58:41,981 - INFO - MI-FAQ - User pp131 hat User ie1011 geändert.
+2024-03-12 23:58:41,981 - INFO - MI-USER - User pp131 hat User ie1011 geändert.
+2024-03-13 00:00:33,816 - INFO - MI-FAQ - User pp131 hat sich eingeloggt.
+2024-03-13 00:00:33,816 - INFO - MI-USER - User pp131 hat sich eingeloggt.
+2024-03-13 00:00:45,510 - INFO - MI-FAQ - User pp131 hat Gruppe admin geändert.
+2024-03-13 00:00:45,510 - INFO - MI-USER - User pp131 hat Gruppe admin geändert.
+2024-03-13 00:00:54,301 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-13 00:00:54,301 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-13 00:01:52,620 - INFO - MI-FAQ - User pp131 hat Gruppe admins geändert.
+2024-03-13 00:01:52,620 - INFO - MI-USER - User pp131 hat Gruppe admins geändert.
+2024-03-13 00:02:38,094 - INFO - MI-FAQ - User pp131 hat User ac1074 geändert.
+2024-03-13 00:02:38,094 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-13 00:02:45,632 - INFO - MI-FAQ - User pp131 hat Gruppe admins1 geändert.
+2024-03-13 00:02:45,632 - INFO - MI-USER - User pp131 hat Gruppe admins1 geändert.
+2024-03-13 00:28:31,767 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-13 00:28:37,285 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
+2024-03-13 00:28:46,597 - INFO - MI-USER - User pp131 hat Gruppe vvz geändert.

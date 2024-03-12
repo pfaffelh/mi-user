@@ -76,6 +76,7 @@ if input == "y":
     for x in groups:
         group.insert_one(x)
     for x in users:
+        x["groups"] = [group.find_one({"name": gr})["_id"] for gr in x["groups"]]
+        print(x["groups"])
         user.insert_one(x)
 
-print([user["email"] for user in list(user.find({}))])

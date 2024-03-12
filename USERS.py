@@ -4,12 +4,12 @@ from misc.config import *
 from misc.util import *
 import pandas as pd
 
-# make all neccesary variables available to session_state
-setup_session_state()
-
 # Seiten-Layout
 st.set_page_config(page_title="User-Verwaltung der mi-Apps", page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 logo()
+
+# make all neccesary variables available to session_state
+setup_session_state()
 
 # Ab hier wird die Seite angezeigt
 st.header("USERS")
@@ -27,7 +27,7 @@ if st.session_state.logged_in:
             "email": [u["email"] for u in all_users],
         }
     for g in list(group.find().sort("name")):
-        data[g["name"]] = [(True if (g["name"] in u["groups"]) else False) for u in all_users]
+        data[g["name"]] = [(True if (g["_id"] in u["groups"]) else False) for u in all_users]
     df = pd.DataFrame(data).sort_values(by=['Nachname'])
 
     st.dataframe(df, hide_index=True)
@@ -41,7 +41,7 @@ else:
         submit = st.form_submit_button("Login")
         st.session_state.user = kennung
         
-    if submit and authenticate(kennung, password) and can_edit(st.session_state.user):
+    if submit and authenticate2(kennung, password) and can_edit(st.session_state.user):
         # If the form is submitted and the email and password are correct,
         # clear the form/container and display a success message
         placeholder.empty()

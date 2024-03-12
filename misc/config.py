@@ -1,21 +1,10 @@
-import pymongo
-
-# This is the ldap-server of the University, which is required for authentication
+# Das ist der LDAP-Server der Universität, der dür die Authentifizierung verwendet wird.
 server="ldaps://ldap.uni-freiburg.de"
 base_dn = "ou=people,dc=uni-freiburg,dc=de"
 
-import logging
-logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(levelname)s - schema - %(message)s")
+# Name der Berechtigung für diese App in der Datenbank
+app_name = "admin"
 
-# Das ist die mongodb; 
-# Das Cluster users enthält User-Daten.
-# group enthält alle möglichen Gruppen für die verschiedenen Apps.
-# user enthält alle Nutzer.
-cluster = pymongo.MongoClient("mongodb://127.0.0.1:27017")
-mongo_db_users = cluster["user"]
-user = mongo_db_users["user"]
-group = mongo_db_users["group"]
+# Die log-Datei
+log_file = 'mi.log'
 
-logging.info("Connected to MongoDB")
-logging.info("Database contains collections: ")
-logging.info(str(mongo_db_users.list_collection_names()))
