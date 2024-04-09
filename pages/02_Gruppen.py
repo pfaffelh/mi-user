@@ -2,15 +2,16 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page 
 import time
 import pymongo
-from misc.config import *
-from misc.util import *
-
-# make all neccesary variables available to session_state
-setup_session_state()
 
 # Seiten-Layout
 st.set_page_config(page_title="User-Verwaltung der mi-Apps", page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
-logo()
+
+from misc.config import *
+import misc.util as util
+
+# make all neccesary variables available to session_state
+util.setup_session_state()
+util.logo()
 
 # Ab hier wird die Webseite erzeugt
 if st.session_state.logged_in:
@@ -27,26 +28,26 @@ if st.session_state.logged_in:
 
   def delete_confirm_one(g):
     # delete g["name"] from all user["groups"]
-    user.update_many({}, {"$pull": {"groups": g["name"]}})
+    util.user.update_many({}, {"$pull": {"groups": g["name"]}})
     # delete g itself
-    group.delete_one(g)
+    util.group.delete_one(g)
     reset_and_confirm()
-    logger.info(f"User {st.session_state.user} hat Gruppe {g['name']} gelöscht.")
+    util.logger.info(f"User {st.session_state.user} hat Gruppe {g['name']} gelöscht.")
     st.success(f"Erfolgreich gelöscht! Gruppe {g['name']} bei allen Usern gelöscht.")
 
   def update_confirm(x, x_updated):
-    group.update_one(x, {"$set": x_updated })
-    logger.info(f"User {st.session_state.user} hat Gruppe {x['name']} geändert.")
+    util.group.update_one(x, {"$set": x_updated })
+    util.logger.info(f"User {st.session_state.user} hat Gruppe {x['name']} geändert.")
     reset_and_confirm()
     st.success("Erfolgreich geändert!")
 
   if st.button('Neue Gruppe hinzufügen'):
-    x = group.insert_one({"name": "", "kommentar": "Das ist die neue Gruppe"})
+    x = util.group.insert_one({"name": "", "kommentar": "Das ist die neue Gruppe"})
     st.session_state.expanded=x.inserted_id
-    logger.info(f"User {st.session_state.user} hat eine neue Gruppe angelegt.")
+    util.logger.info(f"User {st.session_state.user} hat eine neue Gruppe angelegt.")
     st.rerun()
 
-  y = list(group.find(sort = [("name", pymongo.ASCENDING)]))
+  y = list(util.group.find(sort = [("name", pymongo.ASCENDING)]))
 
   for x in y:
       with st.expander(x['name'], expanded = (True if x["_id"] == st.session_state.expanded else False)):
@@ -80,4 +81,4 @@ if st.session_state.logged_in:
 else: 
   switch_page("USERS")
 
-st.sidebar.button("logout", on_click = logout)
+st.sidebar.button("logout", on_click = util.logout)

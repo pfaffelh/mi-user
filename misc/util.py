@@ -74,12 +74,7 @@ def authenticate(username, password):
 
 def can_edit(username):
     u = user.find_one({"rz": username})
-    admin_id = group.find_one({"name": "admin"})["_id"]
-    return (True if admin_id in u["groups"] else False)
-
-def can_edit(username):
-    u = user.find_one({"rz": username})
-    admin_id = group.find_one({"name": "admin"})["_id"]
+    admin_id = group.find_one({"name": app_name})["_id"]
     return (True if admin_id in u["groups"] else False)
 
 # Das ist die mongodb; 
