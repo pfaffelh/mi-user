@@ -11,7 +11,8 @@ import misc.util as util
 
 # make all neccesary variables available to session_state
 util.setup_session_state()
-util.logo()
+# Navigation in Sidebar anzeigen
+util.display_navigation()
 
 # Ab hier wird die Webseite erzeugt
 if st.session_state.logged_in:
@@ -32,19 +33,19 @@ if st.session_state.logged_in:
     # delete g itself
     util.group.delete_one(g)
     reset_and_confirm()
-    util.logger.info(f"User {st.session_state.user} hat Gruppe {g['name']} gelöscht.")
+    util.logger.info(f"User {st.session_state.username} hat Gruppe {g['name']} gelöscht.")
     st.success(f"Erfolgreich gelöscht! Gruppe {g['name']} bei allen Usern gelöscht.")
 
   def update_confirm(x, x_updated):
     util.group.update_one(x, {"$set": x_updated })
-    util.logger.info(f"User {st.session_state.user} hat Gruppe {x['name']} geändert.")
+    util.logger.info(f"User {st.session_state.username} hat Gruppe {x['name']} geändert.")
     reset_and_confirm()
     st.success("Erfolgreich geändert!")
 
   if st.button('Neue Gruppe hinzufügen'):
     x = util.group.insert_one({"name": "", "kommentar": "Das ist die neue Gruppe"})
     st.session_state.expanded=x.inserted_id
-    util.logger.info(f"User {st.session_state.user} hat eine neue Gruppe angelegt.")
+    util.logger.info(f"User {st.session_state.username} hat eine neue Gruppe angelegt.")
     st.rerun()
 
   y = list(util.group.find(sort = [("name", pymongo.ASCENDING)]))
@@ -79,6 +80,6 @@ if st.session_state.logged_in:
 #    st.rerun()
 
 else: 
-  switch_page("USERS")
+  st.switch_page("USERS.py")
 
 st.sidebar.button("logout", on_click = util.logout)

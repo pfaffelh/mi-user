@@ -110,3 +110,26 @@
 2024-04-09 21:38:03,756 - INFO - MI-USER - User pp131 hat User ac1074 geändert.
 2024-04-09 21:38:26,688 - INFO - MI-USER - User pp131 hat User eh1070 gelöscht.
 2024-04-09 21:38:39,750 - INFO - MI-USER - User pp131 hat sich ausgeloggt.
+2025-05-14 15:38:11,411 - INFO - MI-USER - User pp131 hat in sich erfolgreich eingeloggt.
+2025-05-14 15:52:44,612 - INFO - MI-USER - User pp131 hat in sich erfolgreich eingeloggt.
+2025-05-14 15:53:05,858 - INFO - MI-USER - User pp131 hat in sich erfolgreich eingeloggt.
+2025-05-14 15:56:01,348 - INFO - MI-USER - User pp131 hat in sich erfolgreich eingeloggt.
+2025-05-14 15:57:10,064 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 15:57:40,390 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 16:07:04,814 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 16:20:40,427 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 16:21:16,551 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 16:34:13,479 - INFO - MI-USER - User Peter Pfaffelhuber hat User ac1074 geändert.
+2025-05-14 16:34:27,661 - INFO - MI-USER - User Peter Pfaffelhuber hat User ac1074 geändert.
+2025-05-14 16:37:19,702 - INFO - MI-USER - User Peter Pfaffelhuber hat einen neuen User hinzugefügt.
+2025-05-14 16:37:20,991 - INFO - MI-USER - User Peter Pfaffelhuber hat einen neuen User hinzugefügt.
+2025-05-14 16:37:33,237 - INFO - MI-USER - User Peter Pfaffelhuber hat einen neuen User hinzugefügt.
+2025-05-14 16:37:44,264 - INFO - MI-USER - User Peter Pfaffelhuber hat User  gelöscht.
+2025-05-14 16:37:52,672 - INFO - MI-USER - User Peter Pfaffelhuber hat User  gelöscht.
+2025-05-14 16:38:00,098 - INFO - MI-USER - User Peter Pfaffelhuber hat User  gelöscht.
+2025-05-14 16:40:45,447 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 16:43:47,929 - INFO - MI-USER - User Peter Pfaffelhuber hat sich ausgeloggt.
+2025-05-14 16:43:49,756 - INFO - MI-USER - User  hat sich ausgeloggt.
+2025-05-14 16:45:03,423 - INFO - MI-USER - User Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'user'), 'user') hat in sich erfolgreich eingeloggt.
+2025-05-14 19:12:31,668 - INFO - MI-USER - User Peter Pfaffelhuber hat User gb1043 geändert.
+2025-05-14 19:13:02,001 - INFO - MI-USER - User Peter Pfaffelhuber hat User junker geändert.
