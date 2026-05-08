@@ -20,6 +20,26 @@ def configure_logging(file_path, level=logging.INFO):
 
 logger = configure_logging(log_file)
 
+@st.cache_resource
+def get_mongo_client():
+    return pymongo.MongoClient(mongo_location)
+
+# st.toast() direkt vor st.rerun() (oder am Ende eines on_click-Callbacks) wird
+# oft nur als Flash gezeigt: der Rerun beginnt, bevor das Frontend den Toast voll
+# dargestellt hat. flash() parkt die Nachricht in session_state;
+# show_pending_toasts() (im display_navigation aufgerufen) zeigt sie auf dem
+# nächsten Run mit voller Standard-Dauer an.
+def flash(msg):
+    st.session_state.setdefault("_pending_toasts", []).append(msg)
+
+def show_pending_toasts():
+    for msg in st.session_state.pop("_pending_toasts", []):
+        st.toast(msg)
+
+@st.cache_data(ttl=30)
+def list_groups():
+    return list(group.find(sort=[("name", pymongo.ASCENDING)]))
+
 def login():
     st.session_state.logged_in = True
     st.success("Login erfolgreich.")
@@ -30,17 +50,17 @@ def logout():
     logger.info(f"User {st.session_state.username} hat sich ausgeloggt.")
 
 def setup_session_state():
-    # Das ist die mongodb; 
+    # Das ist die mongodb;
     # user ist aus dem Cluster user und wird nur bei der Authentifizierung benötigt
     try:
-        cluster = pymongo.MongoClient(mongo_location)
+        cluster = get_mongo_client()
         mongo_db = cluster["user"]
         st.session_state.user = mongo_db["user"]
         st.session_state.group = mongo_db["group"]
         logger.debug("Connected to MongoDB")
         logger.debug("Database contains collections: ")
         logger.debug(str(mongo_db.list_collection_names()))
-    except: 
+    except:
         logger.error("Verbindung zur Datenbank nicht möglich!")
         st.write("**Verbindung zur Datenbank nicht möglich!**  \nKontaktieren Sie den Administrator.")
 
@@ -60,6 +80,7 @@ def setup_session_state():
         st.session_state.logged_in = False
 
 def display_navigation():
+    show_pending_toasts()
     st.markdown("<style>.st-emotion-cache-16txtl3 { padding: 2rem 2rem; }</style>", unsafe_allow_html=True)
     with st.sidebar:
         st.image("static/ufr.png", use_container_width=True)
@@ -91,7 +112,6 @@ def can_edit(username):
     admin_id = group.find_one({"name": app_name})["_id"]
     return (True if admin_id in u["groups"] else False)
 
-setup_session_state()
-
-group = st.session_state.group
-user = st.session_state.user
+_user_db = get_mongo_client()["user"]
+user = _user_db["user"]
+group = _user_db["group"]
