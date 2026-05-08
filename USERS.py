@@ -1,16 +1,7 @@
 import streamlit as st
 import pandas as pd
-import time
 
 # Seiten-Layout
-
-from misc.config import *
-import misc.util as util
-import time
-# make all neccesary variables available to session_state
-util.setup_session_state()
-
-# Ab hier wird die Seite angezeigt
 
 from misc.config import *
 import misc.util as util
@@ -35,7 +26,7 @@ if st.session_state.logged_in:
             "rz-Kennung": [u["rz"] for u in all_users],
             "color": [u["color"] for u in all_users],
         }
-    for g in list(util.group.find().sort("name")):
+    for g in util.list_groups():
         data[g["name"]] = [(True if (g["_id"] in u["groups"]) else False) for u in all_users]
     df = pd.DataFrame(data).sort_values(by=['Nachname'])
 
@@ -53,28 +44,24 @@ else:
         password = st.text_input("Passwort", type="password")
         submit = st.form_submit_button("Login")
         st.session_state.username = kennung
-        
+
     if submit:
-        if util.authenticate(kennung, password): 
+        if util.authenticate(kennung, password):
             st.session_state.username = kennung
             if util.can_edit(kennung):
                 # If the form is submitted and the email and password are correct,
                 # clear the form/container and display a success message
                 placeholder.empty()
                 st.session_state.logged_in = True
-                st.success("Login successful")
                 util.logger.info(f"User {st.session_state.user} hat in sich erfolgreich eingeloggt.")
                 u = st.session_state.user.find_one({"rz": st.session_state.username})
                 st.session_state.username = " ".join([u["vorname"], u["name"]])
+                util.flash("Login successful")
                 # make all neccesary variables available to session_state
                 st.switch_page("pages/01_User.py")
             else:
                 st.error("Nicht genügend Rechte, um USERS zu editieren.")
                 util.logger.info(f"User {kennung} hatte nicht gebügend Rechte, um sich einzuloggen.")
-                time.sleep(2)
-                st.rerun()
-        else: 
+        else:
             st.error("Login nicht korrekt, oder RZ-Authentifizierung nicht möglich. (Z.B., falls nicht mit VPN verbunden.)")
             util.logger.info(f"Ein falscher Anmeldeversuch.")
-            time.sleep(2)
-
