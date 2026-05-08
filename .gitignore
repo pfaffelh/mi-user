@@ -1,1 +1,5 @@
 venv/
+mongo/*_backup*
+mongo/__pycache__/
+misc/__pycache__/
+mi.log
